@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WOW Page</title>
+</head>
+<body>
+    <a href="#">🐸</a>
+    <div class="container"></div>
+    <audio src="./audio/1.m4a" id="sound_1"></audio>
+    <audio src="./audio/2.m4a" id="sound_2"></audio>
+    <audio src="./audio/3.m4a" id="sound_3"></audio>
+    
+    <style>
+        a {
+            font-size: 60px;
+        }
+
+        body {
+            transition: all 1s;
+        }
+    </style>
+    
+    <script>
+
+        let button = document.querySelector("a");
+        let container = document.querySelector(".container");
+        let random = Math.random()*100;
+           
+        function getRandom3(min, max) {
+            return min + Math.random() * (max - min);
+        }
+
+       var clickCount = 0;
+        
+        function getRandomColor() {
+            var letters = "0123456789ABCDEF";
+            var color = "#";
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+        return color;
+        }
+
+        function randomSound(min, max) {
+            var number = min + Math.floor(Math.random() * (max - min));
+            var soundId = `#sound_${number}`;
+            return soundId;
+        }
+
+        addEventListener("keydown", function(event) {
+            if (event.keyCode == 32);
+            clickCount = clickCount + 1;
+        let scream = document.querySelector(randomSound(1, 4));
+            scream.play();
+         if (clickCount % 10 == 0) alert("zup");
+        let random = Math.floor(Math.random()*700);
+            container.innerHTML += `<span style='font-size:${random}px'>🐸<span>`;
+        let body = document.querySelector("body");
+            body.style.background = getRandomColor();
+            });
+
+        button.addEventListener("click", function() {
+        let scream = document.querySelector(randomSound(1, 4));
+            scream.play();
+            let random = Math.floor(Math.random()*200);
+            container.innerHTML += `<span style='font-size:${random}px'>🐸<span>`;
+            let body = document.querySelector("body");
+                body.style.background = getRandomColor();
+                clickCount = clickCount + 1;
+                if (clickCount % 10 == 0) alert("zup");
+                console.log(clickCount);
+            });
+
+console.log("╭━━━┳━━━┳━━━┳━━╮");
+console.log("┃╭━╮┃╭━╮┃╭━╮┃╭╮┃");
+console.log("┃┃╱┃┃┃╱╰┫┃╱┃┃╰╯╰╮");
+console.log("┃╰━╯┃┃╱╭┫╰━╯┃╭━╮┃");
+console.log("┃╭━╮┃╰━╯┃╭━╮┃╰━╯┃");
+console.log("╰╯╱╰┻━━━┻╯╱╰┻━━━╯");
+    
+</script>
+</body>
+</html>
