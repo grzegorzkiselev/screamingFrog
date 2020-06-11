@@ -56,6 +56,9 @@
             container.innerHTML += `<span style='font-size:${random}px'>🐸<span>`;
         let body = document.querySelector("body");
             body.style.background = getRandomColor();
+        if (clickCount > 100) {
+            clickCount = 0;
+            };
             });
 
         button.addEventListener("click", function() {
@@ -67,7 +70,10 @@
             let body = document.querySelector("body");
                 body.style.background = getRandomColor();
                 clickCount = clickCount + 1;
-                if (clickCount == randomHundreed) alert("zup");
+            if (clickCount == randomHundreed) alert("zup");
+            if (clickCount > 100) {
+                clickCount = 0;
+                };
             });
 
 console.log("╭━━━┳━━━┳━━━┳━━╮");
