@@ -26,11 +26,8 @@
 
         let button = document.querySelector("a");
         let container = document.querySelector(".container");
-        let random = Math.floor(Math.random()*100);
-           
-        function getRandom3(min, max) {
-            return min + Math.random() * (max - min);
-        }
+        let randomHundreed = Math.floor(Math.random()*100);
+        console.log(randomHundreed);
 
        var clickCount = 0;
         
@@ -54,7 +51,7 @@
             clickCount = clickCount + 1;
         let scream = document.querySelector(randomSound(1, 4));
             scream.play();
-         if (clickCount == randomSound(1, 11)) alert("zup");
+         if (clickCount == randomHundreed) alert("zup");
         let random = Math.floor(Math.random()*700);
             container.innerHTML += `<span style='font-size:${random}px'>🐸<span>`;
         let body = document.querySelector("body");
@@ -62,6 +59,7 @@
             });
 
         button.addEventListener("click", function() {
+
         let scream = document.querySelector(randomSound(1, 4));
             scream.play();
             let random = Math.floor(Math.random()*700);
@@ -69,8 +67,7 @@
             let body = document.querySelector("body");
                 body.style.background = getRandomColor();
                 clickCount = clickCount + 1;
-                if (clickCount == randomSound(1, 11)) alert("zup");
-                console.log(clickCount);
+                if (clickCount == randomHundreed) alert("zup");
             });
 
 console.log("╭━━━┳━━━┳━━━┳━━╮");
